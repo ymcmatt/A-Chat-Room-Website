@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const config = require("./config/database")
 
 // connect to Database
-mongoose.connect(config.database, {useNewUrlParser: true });    
+mongoose.connect(config.database, {useUnifiedTopology: true, useNewUrlParser: true });    
 
 // on connection
 mongoose.connection.on('connected', ()=>{
@@ -41,12 +41,12 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./config/passport') (passport)
+require('./config/passport') (passport);
 
 app.use('/users', users);
 
 app.get('/', (req,res) =>{
-    res.send('Invalid nt')
+    res.send('Invalid endpoint')
 })
 
 app.listen(port, ()=>{
