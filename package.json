@@ -10,6 +10,7 @@
   "dependencies": {
     "bcryptjs": "*",
     "body-parser": "*",
+    "bootstrap": "^4.4.1",
     "cors": "*",
     "express": "*",
     "jsonwebtoken": "*",
